@@ -1,0 +1,5 @@
+bin/
+saved/
+*/saved/
+*.class
+*.dat
