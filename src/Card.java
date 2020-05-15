@@ -37,13 +37,13 @@ public class Card implements Serializable{
 		suit = s;
 	}
 	
-	
+	//getter functions
 	public String getNum(){
 		return this.num;
 	}
 	
-	
-	public String toString(){	//Override the Object.toString()
+	//Override the Object.toString()
+	public String toString(){
 		return (num + " of " + suit);
 	}
 }

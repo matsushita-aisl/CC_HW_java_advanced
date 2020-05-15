@@ -3,7 +3,10 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Queue;
 
+
+
 public class Game implements Serializable{
+	
 	public static final int PLAYER_SIZE = 2;
 	
 	public Player[] players = new Player[PLAYER_SIZE];
@@ -16,55 +19,6 @@ public class Game implements Serializable{
 		players[0] = new Player("You");
 		players[1] = new Player("Opponent");
 		round = 1;
-	}
-	
-	
-	
-	public class Player implements Serializable{	//inner class Player
-		private String name;
-		private Queue<Card> hand, acquisition;
-		
-		
-		public Player(String name){
-			this.name = name;
-			hand = new ArrayDeque<>();
-			acquisition = new ArrayDeque<>();
-		}
-		
-		
-		public void addHand(Card card){
-			hand.add(card);
-		}
-		
-		
-		public void earn(Card card){	//Earning a card
-			acquisition.add(card);
-		}
-		
-		
-		public int getScore(){
-			return acquisition.size();
-		}
-		
-		
-		public int getHandNum(){
-			return hand.size();
-		}
-		
-		
-		public String getName(){
-			return name;
-		}
-	}
-	
-	
-	public int getFieldNum(){
-		return field.size();
-	}
-	
-	
-	public int getRound(){
-		return round;
 	}
 	
 	
@@ -120,6 +74,49 @@ public class Game implements Serializable{
 				}
 				field.clear();
 			}
+		}
+	}
+	
+	//[Game]getter functions
+	public int getFieldNum(){
+		return field.size();
+	}
+	public int getRound(){
+		return round;
+	}
+	
+	
+	
+	public class Player implements Serializable{	//inner class Player
+		private String name;
+		private Queue<Card> hand, acquisition;
+		
+		
+		public Player(String name){
+			this.name = name;
+			hand = new ArrayDeque<>();
+			acquisition = new ArrayDeque<>();
+		}
+		
+		
+		public void addHand(Card card){
+			hand.add(card);
+		}
+		
+		
+		public void earn(Card card){	//Earning a card
+			acquisition.add(card);
+		}
+		
+		//[Player]getter functions
+		public int getScore(){
+			return acquisition.size();
+		}
+		public int getHandNum(){
+			return hand.size();
+		}
+		public String getName(){
+			return name;
 		}
 	}
 }

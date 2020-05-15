@@ -26,7 +26,7 @@ import java.nio.file.Paths;
 
 
 
-public class WG_play {
+public class WG_play{
 	private static final Path DIR = Paths.get("./saved/");	//Relative path from Eclipse project (${workspace}/WarGame/)
 	private static final Path DAT = DIR.resolve("PreviousGame.dat");	//Connecting to DIR (In Eclipse, DAT's path is "${workspace}/WarGame/saved/PreviousGame.dat") 
 	private static final Path CSV = DIR.resolve("EntireResult.csv");	//Same as DAT
@@ -36,7 +36,7 @@ public class WG_play {
 	static Scanner scanner = new Scanner(System.in);
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		Deck deck = new Deck();
 		String str;
 		boolean end = false; //end flag
@@ -52,6 +52,7 @@ public class WG_play {
 					"Opponent's hand : " + game.players[1].getHandNum() + ", Acquisitions : " + game.players[1].getScore() +"\n" +
 					"Your hand : " + game.players[0].getHandNum() + ", Acquisitions : " + game.players[0].getScore()
 					);
+			
 			while(true){
 				System.out.print("Do you play a card? [p/q] (p:play / q:quit) > ");
 				str = scanner.next();
@@ -168,6 +169,7 @@ public class WG_play {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	static void mkdir(){
 		if(!Files.exists(DIR)){	//if the save directory does not exist, create the directory
