@@ -3,11 +3,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
 public class Card implements Serializable{
 	//Range of value and suit the Card can take
 	public static final String[] av_num = 
 			{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
 	public static final String[] av_suit = {"Diamond", "Spade"};
+	
+	private String num, suit;
 	
 	//The Map described Rating of Cards
 	public static final Map<String, Integer> rate;
@@ -28,8 +32,6 @@ public class Card implements Serializable{
 		map.put("A", 13);
 		rate = Collections.unmodifiableMap(map);
 	};
-	
-	private String num, suit;
 	
 	//Constructor
 	public Card(String n, String s){
