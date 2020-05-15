@@ -86,8 +86,8 @@ public class Game implements Serializable{
 	}
 	
 	
-	
-	public class Player implements Serializable{	//inner class Player
+	//inner class Player
+	public class Player implements Serializable{
 		private String name;
 		private Queue<Card> hand, acquisition;
 		
@@ -103,8 +103,8 @@ public class Game implements Serializable{
 			hand.add(card);
 		}
 		
-		
-		public void earn(Card card){	//Earning a card
+		//Earning a card
+		public void earn(Card card){
 			acquisition.add(card);
 		}
 		
