@@ -56,6 +56,7 @@ public class WG_play{
 			while(true){
 				System.out.print("Do you play a card? [p/q] (p:play / q:quit) > ");
 				str = scanner.next();
+				
 				if(!str.equals("q") && !str.equals("p")){	//Re-Input
 					System.out.println("INVALID INPUT!! Please press the 'p' or 'q' key");
 					continue;
@@ -100,6 +101,7 @@ public class WG_play{
 			while(true){
 				System.out.print("Do you continue with the game? [y/n] > ");
 				str = scanner.next();
+				
 				if(!str.equals("y") && !str.equals("n")){	//Re-Input
 					System.out.println("INVALID INPUT!! Please press the 'y' or 'n' key");
 					continue;
